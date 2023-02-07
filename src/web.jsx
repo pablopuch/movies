@@ -1,33 +1,33 @@
-import { MoviesGrid } from './components/moviesGrid';
-import styles from './web.module.css'
 import {
     createBrowserRouter,
     RouterProvider,
-    Route,
-    Link,
   } from "react-router-dom";
-  import { MovieDetails } from './pages/movieDetails';
+import { MovieDetails } from './pages/movieDetails';
+import { LandingPage } from './pages/landingPage';
 
 
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <MoviesGrid/>,
+      element: <LandingPage/>,
     },
     {
       path: "/movie/:movieId",
       element: <MovieDetails/>,
     },
+    {
+      path: "/hola",
+      element: <h1>hola</h1>,
+    },
   ]);
 
 export function Web(){
     return (
-            <div>
-                    
+            <div>   
                 <main>
                     <RouterProvider router={router} />
                 </main>
             </div>
-    );
+    )
 }
